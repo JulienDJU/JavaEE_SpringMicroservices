@@ -20,7 +20,8 @@ public class CustomerServiceImpl implements CustomerService{
 
     @Override
     public CustomerDto save(CustomerDto customer) {
-        return null;
+        customer.setId(UUID.randomUUID());
+        return customer;
     }
 
     @Override

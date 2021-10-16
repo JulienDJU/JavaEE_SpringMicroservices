@@ -1,13 +1,20 @@
 package guru.springframework.msscbrewery.web.controller;
 
+import com.sun.net.httpserver.Headers;
 import guru.springframework.msscbrewery.services.CustomerService;
 import guru.springframework.msscbrewery.web.model.CustomerDto;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.RequestEntity;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Constraint;
+import javax.validation.ConstraintViolationException;
+import javax.validation.Valid;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 @RequestMapping("/api/v1/customer")
@@ -27,7 +34,9 @@ public class CustomerController {
     }
 
     @PostMapping
-    public ResponseEntity handlePost(@RequestBody CustomerDto customer) {
+    public ResponseEntity handlePost(@Validated @RequestBody CustomerDto customer) {
+
+        System.out.println(customer);
 
         CustomerDto savedCustomer = this.customerService.save(customer);
 
@@ -39,7 +48,7 @@ public class CustomerController {
 
     @PutMapping("/{customerId}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void handleUpdate(@PathVariable UUID customerId, @RequestBody CustomerDto customerDto){
+    public void handleUpdate(@PathVariable UUID customerId, @Validated @RequestBody CustomerDto customerDto){
 
         customerService.updateCustomer(customerId, customerDto);
     }
@@ -48,6 +57,5 @@ public class CustomerController {
     public void deleteById(@PathVariable("customerId") UUID id){
         customerService.delete(id);
     }
-
 
 }

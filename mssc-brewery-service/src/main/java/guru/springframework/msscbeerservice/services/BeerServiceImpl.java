@@ -6,17 +6,14 @@ import guru.sfg.brewery.model.BeerStyleEnum;
 import guru.springframework.msscbeerservice.domain.Beer;
 import guru.springframework.msscbeerservice.repositories.BeerRepository;
 import guru.springframework.msscbeerservice.web.controller.NotFoundException;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
+import guru.springframework.msscbeerservice.web.mappers.BeerMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
-import org.springframework.util.StringUtils;
 
 import java.util.UUID;
-import java.util.stream.Collectors;
 
 /**
  * Created by jt on 2019-06-06.
@@ -25,6 +22,7 @@ import java.util.stream.Collectors;
 @Service
 public class BeerServiceImpl implements BeerService {
     private final BeerRepository beerRepository;
+    private final BeerMapper beerMapper;
 
     @Cacheable(cacheNames = "beerListCache", condition = "#showInventoryOnHand == false ")
     @Override
@@ -40,13 +38,18 @@ public class BeerServiceImpl implements BeerService {
 
     @Cacheable(cacheNames = "beerCache", key = "#beerId", condition = "#showInventoryOnHand == false ")
     @Override
-    public BeerDto getById(UUID beerId, Boolean showInventoryOnHand) {
-        return null;
+    public BeerDto getBeerById(UUID beerId) {
+        return beerMapper.beerToBeerDto(
+                beerRepository.findById(beerId).orElseThrow(() -> new NotFoundException())
+        );
     }
 
     @Override
     public BeerDto saveNewBeer(BeerDto beerDto) {
-        return null;
+        return beerMapper.beerToBeerDto(
+                beerRepository.save(
+                        beerMapper.beerDtoToBeer(beerDto))
+        );
     }
 
     @Override

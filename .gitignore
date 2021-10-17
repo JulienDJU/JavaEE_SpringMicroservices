@@ -1,5 +1,5 @@
 # Specific to IntelliJ
-.idea/*
+*/.idea/
 
 # Specific to Maven
 **/target

@@ -17,7 +17,7 @@
 
 package guru.sfg.beer.order.service.web.controllers;
 
-import guru.sfg.beer.order.service.services.BeerOrderService;
+import guru.sfg.beer.order.service.services.beer.BeerOrderService;
 import guru.sfg.beer.order.service.web.model.BeerOrderDto;
 import guru.sfg.beer.order.service.web.model.BeerOrderPagedList;
 import org.springframework.data.domain.PageRequest;
@@ -55,15 +55,15 @@ public class BeerOrderController {
         return beerOrderService.listOrders(customerId, PageRequest.of(pageNumber, pageSize));
     }
 
+    @GetMapping("orders/{orderId}")
+    public BeerOrderDto getOrder(@PathVariable("customerId") UUID customerId, @PathVariable("orderId") UUID orderId){
+        return beerOrderService.getOrderById(customerId, orderId);
+    }
+
     @PostMapping("orders")
     @ResponseStatus(HttpStatus.CREATED)
     public BeerOrderDto placeOrder(@PathVariable("customerId") UUID customerId, @RequestBody BeerOrderDto beerOrderDto){
         return beerOrderService.placeOrder(customerId, beerOrderDto);
-    }
-
-    @GetMapping("orders/{orderId}")
-    public BeerOrderDto getOrder(@PathVariable("customerId") UUID customerId, @PathVariable("orderId") UUID orderId){
-        return beerOrderService.getOrderById(customerId, orderId);
     }
 
     @PutMapping("/orders/{orderId}/pickup")

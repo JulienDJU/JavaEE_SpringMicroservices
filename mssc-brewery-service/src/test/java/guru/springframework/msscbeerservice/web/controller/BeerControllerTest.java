@@ -60,7 +60,8 @@ public class BeerControllerTest {
 
     @Test
     void getBeerById() throws Exception {
-        given(beerService.getBeerById(any(UUID.class))).willReturn(validBeer);
+        Boolean showInventoryOnHand = false;
+        given(beerService.getById(any(UUID.class), showInventoryOnHand)).willReturn(validBeer);
 
         mockMvc.perform(get("/api/v1/beer/{beerId}", UUID.randomUUID())
                 .param("iscold", "yes")

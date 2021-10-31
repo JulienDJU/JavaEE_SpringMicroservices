@@ -15,13 +15,15 @@
  *     along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package guru.sfg.beer.order.service.services;
+package guru.sfg.beer.order.service.services.beer;
 
 import guru.sfg.beer.order.service.domain.BeerOrder;
 import guru.sfg.beer.order.service.domain.Customer;
 import guru.sfg.beer.order.service.domain.OrderStatusEnum;
 import guru.sfg.beer.order.service.repositories.BeerOrderRepository;
 import guru.sfg.beer.order.service.repositories.CustomerRepository;
+import guru.sfg.beer.order.service.services.BeerService;
+import guru.sfg.beer.order.service.services.beer.BeerOrderService;
 import guru.sfg.beer.order.service.web.mappers.BeerOrderMapper;
 import guru.sfg.beer.order.service.web.model.BeerOrderDto;
 import guru.sfg.beer.order.service.web.model.BeerOrderPagedList;
@@ -44,14 +46,16 @@ public class BeerOrderServiceImpl implements BeerOrderService {
     private final BeerOrderRepository beerOrderRepository;
     private final CustomerRepository customerRepository;
     private final BeerOrderMapper beerOrderMapper;
+    private final BeerService beerService;
     private final ApplicationEventPublisher publisher;
 
     public BeerOrderServiceImpl(BeerOrderRepository beerOrderRepository,
                                 CustomerRepository customerRepository,
-                                BeerOrderMapper beerOrderMapper, ApplicationEventPublisher publisher) {
+                                BeerOrderMapper beerOrderMapper, BeerService beerService, ApplicationEventPublisher publisher) {
         this.beerOrderRepository = beerOrderRepository;
         this.customerRepository = customerRepository;
         this.beerOrderMapper = beerOrderMapper;
+        this.beerService = beerService;
         this.publisher = publisher;
     }
 
@@ -103,7 +107,19 @@ public class BeerOrderServiceImpl implements BeerOrderService {
 
     @Override
     public BeerOrderDto getOrderById(UUID customerId, UUID orderId) {
-        return beerOrderMapper.beerOrderToDto(getOrder(customerId, orderId));
+        BeerOrderDto beerOrderDto = beerOrderMapper.beerOrderToDto(getOrder(customerId, orderId));
+////        BeerOrder beerOrder = getOrder(customerId, orderId);
+//
+//        for (BeerOrderLineDto beerOrderLineDto: beerOrderDto.getBeerOrderLines()) {
+//            log.debug("Adding beerId and beerName to beerOrderLine");
+//            String beerUpc = beerOrderLineDto.getUpc();
+//            BeerDto beerDto = beerService.getBeerByUpc(beerUpc);
+//            // add beerName and beerId
+//            beerOrderLineDto.setBeerId(beerDto.getId());
+//            beerOrderLineDto.setBeerName(beerDto.getBeerName());
+//
+//        }
+        return beerOrderDto;
     }
 
     @Override

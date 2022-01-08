@@ -1,9 +1,10 @@
-package guru.sfg.brewery.model;
+package guru.springframework.msscbeerservice.web.model;
 
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.JsonNode;
+import guru.springframework.msscbeerservice.web.model.BeerDto;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;

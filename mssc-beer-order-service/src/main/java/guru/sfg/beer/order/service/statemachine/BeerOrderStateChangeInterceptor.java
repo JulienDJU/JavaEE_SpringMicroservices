@@ -14,6 +14,7 @@ import org.springframework.statemachine.support.StateMachineInterceptorAdapter;
 import org.springframework.statemachine.transition.Transition;
 import org.springframework.stereotype.Component;
 
+import javax.transaction.Transactional;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -24,18 +25,19 @@ public class BeerOrderStateChangeInterceptor extends StateMachineInterceptorAdap
 
     private final BeerOrderRepository beerOrderRepository;
 
+    @Transactional
     @Override
     public void preStateChange(State<BeerOrderStatusEnum, BeerOrderEventEnum> state, Message<BeerOrderEventEnum> message,
                                Transition<BeerOrderStatusEnum, BeerOrderEventEnum> transition,
                                StateMachine<BeerOrderStatusEnum, BeerOrderEventEnum> stateMachine) {
 
-                log.debug(String.format("Entering PreStateChange: from %s"), state.getId());
+                log.debug(String.format("Entering PreStateChange: from %s", state.getId()));
 
         Optional.ofNullable(message).ifPresent(msg -> {
-            Optional.ofNullable((String)(msg.getHeaders().getOrDefault(BeerOrderManagerImpl.BEER_ORDER_ID_HEADER, "")))
+            Optional.ofNullable((String)(msg.getHeaders().getOrDefault(BeerOrderManagerImpl.ORDER_ID_HEADER, "")))
                     .ifPresent(orderId -> {
                         BeerOrder beerOrder = beerOrderRepository.getOne(UUID.fromString(orderId));
-                        beerOrder.setState(state.getId());
+                        beerOrder.setOrderStatus(state.getId());
                         beerOrderRepository.saveAndFlush(beerOrder);
                     });
         });

@@ -27,7 +27,7 @@ public class CustomerOrderController {
     private final BeerOrderRepository beerOrderRepository;
     private final BeerOrderManager beerOrderManager;
 
-    @Scheduled(fixedDelay = 100000)
+    //@Scheduled(fixedDelay = 100000)
     private void generateOrder() {
 
         String beerToOrder = BeerOrderBootStrap.BEER_1_UPC;

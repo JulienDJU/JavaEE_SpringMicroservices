@@ -1,6 +1,6 @@
 package guru.sfg.beer.inventory.service.web.controllers;
 
-import guru.sfg.beer.inventory.service.brewery.model.BeerInventoryDto;
+import guru.sfg.brewery.model.BeerInventoryDto;
 import guru.sfg.beer.inventory.service.repositories.BeerInventoryRepository;
 import guru.sfg.beer.inventory.service.web.mappers.BeerInventoryMapper;
 import lombok.RequiredArgsConstructor;

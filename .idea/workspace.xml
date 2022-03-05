@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="1ddee52e-a6b7-4725-bac3-3038b91c9584" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/mssc-beer-order-service/src/main/java/guru/sfg/beer/order/service/services/CustomerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mssc-beer-order-service/src/main/java/guru/sfg/beer/order/service/services/CustomerServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mssc-beer-order-service/src/main/java/guru/sfg/beer/order/service/web/controllers/CustomerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mssc-beer-order-service/src/main/java/guru/sfg/beer/order/service/web/mappers/CustomerMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mssc-beer-order-service/src/main/java/guru/sfg/brewery/model/CustomerPagedList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mssc-brewery-eureka/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mssc-brewery-gateway/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mssc-brewery-gateway/src/main/java/com/sfg/gateway/MsscBreweryGatewayApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mssc-brewery-gateway/src/main/java/com/sfg/gateway/config/GoogleConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mssc-brewery-gateway/src/main/java/com/sfg/gateway/config/LocalHostRouteConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mssc-brewery-gateway/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mssc-beer-inventory-service/src/main/java/guru/sfg/beer/inventory/service/services/AllocateInventoryListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/mssc-beer-inventory-service/src/main/java/guru/sfg/beer/inventory/service/services/AllocateInventoryListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mssc-beer-inventory-service/src/main/java/guru/sfg/beer/inventory/service/services/NewInventoryListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/mssc-beer-inventory-service/src/main/java/guru/sfg/beer/inventory/service/services/NewInventoryListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mssc-beer-order-service/src/main/java/guru/sfg/beer/order/service/bootstrap/BeerOrderBootStrap.java" beforeDir="false" afterPath="$PROJECT_DIR$/mssc-beer-order-service/src/main/java/guru/sfg/beer/order/service/bootstrap/BeerOrderBootStrap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mssc-beer-order-service/src/main/java/guru/sfg/beer/order/service/config/JmsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/mssc-beer-order-service/src/main/java/guru/sfg/beer/order/service/config/JmsConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mssc-beer-order-service/src/main/java/guru/sfg/beer/order/service/controllers/CustomerOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/mssc-beer-order-service/src/main/java/guru/sfg/beer/order/service/controllers/CustomerOrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mssc-beer-order-service/src/main/java/guru/sfg/beer/order/service/statemachine/actions/ValidateOrderAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/mssc-beer-order-service/src/main/java/guru/sfg/beer/order/service/statemachine/actions/ValidateOrderAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mssc-beer-order-service/src/main/java/guru/sfg/brewery/model/CustomerDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/mssc-beer-order-service/src/main/java/guru/sfg/brewery/model/CustomerDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mssc-beer-order-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/mssc-beer-order-service/src/main/resources/application.properties" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="25NybwPLPDTmve9AsgvRYgqTW66" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="jdk.selected.JAVA_MODULE" value="11" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/mssc-master" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1ddee52e-a6b7-4725-bac3-3038b91c9584" name="Default Changelist" comment="" />
+      <created>1645381914701</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1645381914701</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

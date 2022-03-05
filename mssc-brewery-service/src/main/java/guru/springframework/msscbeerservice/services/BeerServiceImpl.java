@@ -28,7 +28,6 @@ import java.util.stream.Collectors;
 public class BeerServiceImpl implements BeerService {
     private final BeerRepository beerRepository;
     private final BeerMapper beerMapper;
-    private final BeerInventoryServiceRestTemplateImpl beerInventory;
 
     @Cacheable(cacheNames = "beerListCache", condition = "#showInventoryOnHand == false ")
     @Override

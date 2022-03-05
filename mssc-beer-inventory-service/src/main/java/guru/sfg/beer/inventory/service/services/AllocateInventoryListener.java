@@ -1,8 +1,8 @@
 package guru.sfg.beer.inventory.service.services;
 
-import guru.sfg.beer.inventory.service.brewery.model.BeerOrderDto;
-import guru.sfg.beer.inventory.service.brewery.model.events.AllocateOrderRequest;
-import guru.sfg.beer.inventory.service.brewery.model.events.AllocateOrderResult;
+import guru.sfg.brewery.model.BeerOrderDto;
+import guru.sfg.brewery.model.events.AllocateOrderRequest;
+import guru.sfg.brewery.model.events.AllocateOrderResult;
 import guru.sfg.beer.inventory.service.config.JmsConfig;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -34,6 +34,7 @@ public class AllocateInventoryListener {
             } else {
                 builder.pendingInventory(true);
             }
+            builder.allocationError(false);
         } catch (Exception e){
             log.error("Allocation failed for Order Id: " + allocateOrderRequest.getBeerOrderDto().getId());
             builder.allocationError(true);

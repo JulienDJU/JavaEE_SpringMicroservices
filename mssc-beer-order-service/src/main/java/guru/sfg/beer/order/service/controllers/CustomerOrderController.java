@@ -1,17 +1,12 @@
 package guru.sfg.beer.order.service.controllers;
 
 import guru.sfg.beer.order.service.bootstrap.BeerOrderBootStrap;
-import guru.sfg.beer.order.service.domain.*;
-import guru.sfg.beer.order.service.repositories.BeerOrderRepository;
+import guru.sfg.beer.order.service.domain.BeerOrder;
+import guru.sfg.beer.order.service.domain.BeerOrderLine;
+import guru.sfg.beer.order.service.domain.BeerOrderManager;
+import guru.sfg.beer.order.service.domain.Customer;
 import guru.sfg.beer.order.service.repositories.CustomerRepository;
-import guru.sfg.brewery.model.BeerOrderDto;
-import guru.sfg.brewery.model.BeerOrderLineDto;
 import lombok.RequiredArgsConstructor;
-import org.springframework.messaging.Message;
-import org.springframework.messaging.support.MessageBuilder;
-import org.springframework.scheduling.annotation.Scheduled;
-import org.springframework.statemachine.StateMachine;
-import org.springframework.statemachine.config.StateMachineFactory;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
@@ -23,8 +18,6 @@ import java.util.*;
 public class CustomerOrderController {
 
     private final CustomerRepository customerRepository;
-    private final StateMachineFactory<BeerOrderStatusEnum, BeerOrderEventEnum> stateMachineFactory;
-    private final BeerOrderRepository beerOrderRepository;
     private final BeerOrderManager beerOrderManager;
 
     //@Scheduled(fixedDelay = 100000)

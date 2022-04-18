@@ -21,3 +21,19 @@ docker run -it --rm -p 8161:8161 -p 61616:61616 vromero/activemq-artemis
 Console visible at http://0.0.0.0:8161/console
 username: artemis
 password: simetraehcapa
+
+Zipkin
+docker run -d -p 9411:9411 openzipkin/zipkin
+Or
+curl -sSL https://zipkin.io/quickstart.sh | bash -s
+java -jar zipkin.jar
+
+Push to Docker hub
+mvn clean package docker:build docker:push
+
+Start docker compose
+
+docker-compose -f ~/IT/JavaEE/UdemySpringMicroservices/mssc-brewery-service/src/main/docker/local/compose.yaml up -d
+
+Stop it
+docker-compose -f ~/IT/JavaEE/UdemySpringMicroservices/mssc-brewery-service/src/main/docker/local/compose.yaml down --rmi local

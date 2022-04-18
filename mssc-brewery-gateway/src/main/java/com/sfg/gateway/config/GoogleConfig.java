@@ -10,13 +10,13 @@ import org.springframework.context.annotation.Profile;
 //@Configuration
 public class GoogleConfig {
 
-    @Bean
-    public RouteLocator googleConfig(RouteLocatorBuilder builder){
-        return builder.routes()
-                .route(r -> r.path("/googlesearch")
-                        .filters(f -> f.rewritePath("/googlesearch2(?<segment>/?.*)", "/${segment}"))
-                    .uri("https://google.com")
-                    .id("google"))
-                .build();
-    }
+//    @Bean
+//    public RouteLocator googleConfig(RouteLocatorBuilder builder){
+//        return builder.routes()
+//                .route(r -> r.path("/googlesearch")
+//                        .filters(f -> f.rewritePath("/googlesearch2(?<segment>/?.*)", "/${segment}"))
+//                    .uri("https://google.com")
+//                    .id("google"))
+//                .build();
+//    }
 }

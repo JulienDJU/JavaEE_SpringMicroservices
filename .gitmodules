@@ -1,0 +1,3 @@
+[submodule "mssc-brewery-config-repo"]
+	path = mssc-brewery-config-repo
+	url = git@github.com:JulienDJU/mssc-brewery-config-repo.git

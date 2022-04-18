@@ -1,5 +1,8 @@
 # Specific to IntelliJ
 */.idea/
+*.iml
 
 # Specific to Maven
 **/target
+release.properties
+
